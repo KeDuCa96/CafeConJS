@@ -1,0 +1,343 @@
+:root{
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Opens Sans', sans-serif;
+
+    --coffe: #784D3C;
+    --whitecream: #EFF9F0;
+    --Xibetic: #13070C;
+    --orange: #F26419;
+    --gray: #3F5E5A;
+
+}
+html{
+    box-sizing: border-box; /* Esto lo hacemos para que el padding y margin no afecte el ancho de nuestros elementos */
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/* Globales */
+
+.contenedor{
+     /* max-width: 120rem;  ANCHURA MAXIMA DEL CONTENIDO */
+    /* width: 98%;  ANNCHURA DEL CONTENIDO */
+    width: min(90%, 120rem);/* Es lo mism que las dos líneas que tenemos arriba   */
+    margin: 0 auto; /* MARGEN DERECHO E IZQUIERDO, COLOCAMOS AUTO PARA QUE SE AMOLDE AL TAMAÑO DEL CONTENIDO */
+}
+
+a{ /* ELIMINAMOS TODOS LOS EFECTOS A LOS ENLACES */
+    text-decoration: none;
+}
+
+h1,h2,h3,h4{ /* DEFINIMOS LA MISMA FUENTE E INTERLINIEADO A TODOS LOS H (HEADING) */
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+/* NUMERO DE FUENTE DE CADA HEADING */
+h1{
+    font-size: 4.8rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3.2rem;
+}
+
+h4{
+    font-size: 2.8rem;
+}
+
+
+img{ /* DEIFINIMOS EL MAXIMO ANCHO DE TODAS LAS IMAGENES AL 100 PARA TENER UN RESPONSIBE DESING */
+    max-width: 100%;
+}
+
+/* UTILIDADES: ESTAS UTILIDADES NOS SIRVEN PARA APLICARLAS A LOS ELEMENTOS y AHORRAR CÓDIGO CSS*/
+
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.over-mouse:hover{ /* CAMBIAMOS EL COLOR CUANDO PASAMOS EL MOUSE */
+        font-weight: bold;
+        font-size: 5.5rem;
+        color: var(--orange); /* COLOR QUE CAMBIA CUANDO PASAMOS EL MOUSE */
+}
+
+.over-mouse__enlace:hover{
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--orange);
+}
+/* HEADER */
+.webp .header{
+    background-image: url(../img/banner.webp);
+}
+.no-wep .header{
+    background-image: url(../img/banner.jpg);
+}
+.header{
+    height: 60rem; /* Aplicamos la altura para que se vea la imagen */
+    background-size: cover; /* Para tomar todo el espacio disponible */
+    background-repeat: no-repeat;
+    background-position: center center; /* Esto es para fluir a cualquier tamaño y se aplica dos center para que centre de vertical y horizontalemnte */
+}
+
+.header__texto{
+    text-align: center; /* CENTRAMOS EL CONTENIDO EL TEXTO PRINCIPAL DEL HEADER */
+    color: var(--whitecream); /* LE DAMOS EL COLOR DE LA LETRA */
+    
+}
+
+@media (min-width: 768px) {  
+    .header__texto{
+        margin-top: 15rem; /* APLICAMOS PARA BAJAR EL TEXTO PRINCIPAL */
+    }
+}
+
+@media (min-width: 768px) { /* MQ PARA LA BARRA DE NAVEGACION */
+    .barra{
+        display: flex; /* LE DAMOS EL FLEX PARA PODER MOVERLO LOS ELEMENTOS */
+        justify-content: space-between; /* SEPARAMOS ENTRE ELLOS MISMOS */
+        align-items: center; /* CENTRAMOS EL CONTENIDO */
+        padding-top: 4rem; /* APLICAMOS PADDING ABAJO PARA SEPRAR EL CONTENDO PRINCIPAL DE LA BARRA DE NAV*/
+    }
+}
+.barra{ /* Con esto movemos la barra de navegacion abajo*/
+    padding-top: 1rem;
+}
+
+.logo {
+    color: var(--blanco);
+}
+.logo__nombre{ /* TEXTO DEL LOGO */
+    font-weight: 400; /* GROSOR DE LA LETRA */
+    color: var(--whitecream); /* COLOR DE LA LETRA */
+}
+
+
+.logo__bold{
+    font-weight: 700; /* APLICANOS NEGRILLA AL TEXTO DEL LOGO */
+}
+/* Header Nav */
+
+@media (min-width: 768px) {
+    .navegacion{
+        display: flex;
+        gap: 2rem;
+        margin: 5rem;
+    }   
+    .navegacion__enlace{
+        margin-right: 2rem;
+    } 
+}
+.navegacion__enlace{
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--whitecream);
+}
+
+@media (min-width: 768px) {
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+.entrada{
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{ /* SELECTOR QUE PERMITE SELECCIONAR EL ÚLTIMO ELEMENTO DE LAS CLASES LLAMADAS */
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton{
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--whitecream);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+.boton:hover{
+    background-color: #3F5E5A;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .boton{
+        display: inline-block;
+    }
+}
+
+.boton--primero{
+    background-color: var(--Xibetic);
+}
+
+.boton--secundario{
+    background-color: var(--coffe);
+}
+
+.cursos{
+    list-style: none; /*    NOS SIRVE PARA QUITAR 
+    
+    LAS BIÑETAS A LAS LISTAS */
+}
+
+.widget-curso{
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type{
+    border: none;
+    margin-bottom: none;
+}
+
+.widget-curso__label{
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+
+.widget-curso__info,
+.span-cursos{
+    font-weight: normal;
+}
+
+.widget-curso__label,
+.widget-curso__info{
+    font-size: 2rem;
+}
+
+/* FOOTER */
+
+.footer{
+    background-color: var(--Xibetic);
+    padding-bottom: 1rem;
+    margin-top: 4rem;
+}
+
+/* NOSOTROS */
+
+
+@media (min-width: 768px) {
+    .sobre-nosotros{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+/* CURSOS */
+
+.cursos__informacion{
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .cursos__informacion{
+        display: grid;
+        grid-template-columns: 35% 60%;
+        column-gap: 2rem;
+    }
+}
+
+.cursos__informacion:last-of-type{
+    border-bottom: none;
+    border-radius: none;
+}
+
+
+.widget-cursos{
+    font-family: var(--fuenteParrafos);
+    font-weight: bold;
+}
+
+.cursos__imagen{
+    max-width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* CONTACTO */
+
+.error{
+    background-color:#F26419;
+    text-align: center;
+    padding: 1rem;
+    color: var(--whitecream);
+}
+
+.completo{
+    background-color: green;
+    text-align: center;
+    padding:1rem;
+    color: var(--whitecream);
+}
+
+.contacto__imagen{
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;/*  Esto lo definimos para que se vea la imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* FORMULARIO */
+
+.formulario{
+    background-color: var(--whitecream);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo__label{
+    flex: 0 0 9rem; /* Los 0 son la base de crecimiento y el 9rem es el tamaño fijo*/
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.campo__field{
+    flex: 1;
+    border: 1px solid var(--gray);
+}
+
+.campo__field--texarea{
+    height: 20rem;
+}
